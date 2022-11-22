@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "65c81fa8-d7bd-47e4-a3b6-113a19a14581",
+		"name": "Gestao-hospitalar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17189733"
+	},
+	"item": [
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "find-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/paciente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/paciente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Felix\",\r\n    \"cpf\": \"265.126.020-72\",\r\n    \"dataNascimento\": \"08/05/2002\",\r\n    \"sexo\": \"MASCULINO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/paciente/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Jonathan\",\r\n    \"cpf\": \"teste\",\r\n    \"dataNascimento\": \"2002-03-02\",\r\n    \"sexo\": \"MASCULINO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/paciente/update/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paciente-determinado-medico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/paciente/bymed/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"paciente",
+								"bymed",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atendimento",
+			"item": [
+				{
+					"name": "listar-atendimento-periodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/atendimento/periodo/?startDate=10/05/2022&endDate=10/05/2025",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								"periodo",
+								""
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "10/05/2022"
+								},
+								{
+									"key": "endDate",
+									"value": "10/05/2025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/atendimento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/atendimento/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"dataAtendimento\": \"10/05/2022\",\r\n    \"ativo\": false,\r\n    \"observacao\": \"Paciente atendido com sucesso!\",\r\n    \"medico\": {\r\n        \"id\": 1\r\n    },\r\n    \"paciente\":\r\n    {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/atendimento/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar-atendimento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"dataAtendimento\": \"10/05/2025\",\r\n    \"ativo\": false,\r\n    \"observacao\": \"Paciente atendido com sucesso!\",\r\n    \"medico\": {\r\n        \"id\": 1\r\n    },\r\n    \"paciente\":\r\n    {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/atendimento/editar/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								"editar",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Jonathan\",\r\n    \"cpf\": \"896.721.100-73\",\r\n    \"dataNascimento\": \"08/05/2002\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"crm\": \"123456/SP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"FELIX\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico/update/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medico/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar-medicos-periodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medico/periodo/?startDate=10/05/2022&endDate=10/05/2023",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"periodo",
+								""
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "10/05/2022"
+								},
+								{
+									"key": "endDate",
+									"value": "10/05/2023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar-medicos-periodo Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medico/byPaciente/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medico",
+								"byPaciente",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
