@@ -12,13 +12,13 @@ Você agora irá atuar em um projeto para um software de Gestão Hospitalar. Voc
 
 
 # Material estudado além da trilha
-[Lazy/eager](https://www.alura.com.br/artigos/entendendo-o-lazy-e-o-eager-load-da-jpa?gclid=Cj0KCQiA37KbBhDgARIsAIzce166jenceGRfjbjdx5hJSORopZ1ufoAnTCJV-YYa1ijFJm14dSAd4x8aAqLCEALw_wcB)
-[Mapeamento JPA](https://www.youtube.com/watch?v=GASH2PTuwGI) 
-[Spring Guides](https://spring.io/guides)
+[Lazy/eager](https://www.alura.com.br/artigos/entendendo-o-lazy-e-o-eager-load-da-jpa?gclid=Cj0KCQiA37KbBhDgARIsAIzce166jenceGRfjbjdx5hJSORopZ1ufoAnTCJV-YYa1ijFJm14dSAd4x8aAqLCEALw_wcB)  <p>
+[Mapeamento JPA](https://www.youtube.com/watch?v=GASH2PTuwGI)  <p>
+[Spring Guides](https://spring.io/guides) <p>
 
 
 ## Colaboradores
-[Yuri Diego](https://github.com/yuriidiiego) -> Ajuda para gerar pdf. 
+[Yuri Diego](https://github.com/yuriidiiego) -> Ajuda para gerar pdf.  <p>
 [André Almeida](https://github.com/andreluas) -> Ajuda com querys 
 
 # POSTMAN 
