@@ -48,7 +48,6 @@ public class AtendimentoService {
 		findById.setAtivo(atendimentoDTO.isAtivo());
 		findById.setObservacao(atendimentoDTO.getObservacao());
 		return findById;
-
 	}
 
 }

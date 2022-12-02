@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +33,10 @@ public class PacienteController {
 	public ResponseEntity<PacienteDTO> findById(@PathVariable("id") Long id) {
 		return ResponseEntity.ok().body(service.findById(id));
 	}
+	  @GetMapping(value = "/pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+	  public ResponseEntity<InputStreamResource> gerarPdfPacientes() {
+	    return service.gerarPdfPacientes();
+	  }
 
 	@GetMapping
 	public ResponseEntity<List<PacienteDTO>> findAll() {
